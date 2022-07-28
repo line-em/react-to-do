@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import ThemeSwitch from "./ThemeSwitch";
-import { Lightbulb } from "phosphor-react";
+import { Lightbulb, Pencil, Trash, Clock } from "phosphor-react";
 
 export default function App() {
 	//Adjust icon sizing
@@ -10,7 +10,9 @@ export default function App() {
 
 	const [headerTitle, setHeaderTitle] = useState("");
 	const [tab, setTab] = useState("today");
-	const [todos, setTodos] = useState([{ id: 1, task: "Learn React" }]);
+	const [todos, setTodos] = useState([
+		{ id: 1, task: "Learn React", timestamp: "2020-01-01", completed: false }
+	]);
 
 	const switchTabs = (tab) => {
 		switch (tab) {
@@ -47,54 +49,78 @@ export default function App() {
 	}, []);
 
 	return (
-		<main className="main_style">
-			<ThemeSwitch />
-			<Header headerTitle={headerTitle} windowWidth={windowWidth} />
-			<section className="inputTasks">
-				<input type="text" name="tasks" placeholder="Add a task" />
-				<button>Add</button>
-			</section>
-			{todos?.length === 0 ? (
-				<section className="alerts alerts_style" role="detail">
-					<Lightbulb
-						size={windowWidth < 768 ? 18 : 22}
-						weight="fill"
-						color="var(--redsalsa)"
-					/>
-					Every task will be shown here.
+		<>
+			<main className="main_style">
+				<ThemeSwitch />
+				<Header headerTitle={headerTitle} windowWidth={windowWidth} />
+				<section className="inputTasks">
+					<input type="text" name="tasks" placeholder="Add a task" />
+					<button>Add</button>
 				</section>
-			) : (
-				<>
-					<section className="renderedList">
-						<ul>
-							{todos.map((todo) => (
-								<li key={todo.id}>
-									<input type="checkbox" name="tasks" />
-									{todo.task}
-								</li>
-							))}
-						</ul>
+				{todos?.length === 0 ? (
+					<section className="alerts alerts_style" role="detail">
+						<Lightbulb
+							size={windowWidth < 768 ? 18 : 22}
+							weight="fill"
+							color="var(--redsalsa)"
+						/>
+						Every task will be shown here.
 					</section>
-					<button className="clearAll">Clear All</button>
-					<section className="filter-buttons">
-						{" "}
-						<button class="filter" id="show-all">
-							Show All
-						</button>
-						<button class="filter" id="show-complete">
-							Completed
-						</button>
-						<button class="filter" id="show-active">
-							Active
-						</button>
-					</section>
-				</>
-			)}
-		</main>
+				) : (
+					<>
+						<section className="renderedList">
+							<ul>
+								{todos.map((todo) => (
+									<li key={todo.id}>
+										<label className="tasks" htmlFor={todo.id}>
+											<input name={todo.id} type="checkbox" />
+											{todo.task}
+											<p className="time">
+												<Clock size={18} weight="fill" />
+												{todo.timestamp}
+											</p>
+										</label>
+
+										<div>
+											<abbr title="edit task">
+												<Pencil size={18} weight="fill" />
+												<span className="tooltip">Edit</span>
+											</abbr>
+											<abbr title="delete task">
+												<Trash size={18} weight="fill" />
+												<i
+													className="ph-trash-fill jello deleteThis"
+													id="delete${task.id}"
+													alt="delete task"
+												></i>
+											</abbr>
+										</div>
+									</li>
+								))}
+							</ul>
+							<button className="filter temp_clear">Clear All</button>
+						</section>
+						<section className="filter-buttons">
+							<div>
+								<button className="filter" id="show-all">
+									Show All
+								</button>
+								<button className="filter" id="show-complete">
+									Completed
+								</button>
+								<button className="filter" id="show-active">
+									Active
+								</button>
+							</div>
+						</section>
+					</>
+				)}
+			</main>
+		</>
 	);
 }
-// 	<div class="alerts alerts_style alert-danger" role="alert">
+// 	<div className="alerts alerts_style alert-danger" role="alert">
 // 	<strong>Error!</strong> You must enter a task.
-// </div>	<div class="alerts alerts_style alert-danger" role="alert">
+// </div>	<div className="alerts alerts_style alert-danger" role="alert">
 // 	<strong>Error!</strong> You must enter a task.
 // </div>

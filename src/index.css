@@ -118,7 +118,7 @@ select {
 	--lavender: #28283e;
 	--green: #4bd391;
 	--transparency: #28283ebb;
-	--transparency-2: rgba(240, 240, 240, 0.287);
+	--transparency-2: rgba(240, 240, 240, 0.72);
 	--gradient: linear-gradient(
 		55deg,
 		hsl(240deg 29% 52%) 0%,
@@ -161,7 +161,7 @@ main {
 }
 
 nav {
-	margin: -1rem -3rem 0 0;
+	margin: -1rem -3.5rem 0 0;
 	display: flex;
 	justify-content: flex-end;
 	gap: 10px;
@@ -169,18 +169,25 @@ nav {
 
 .wrapper {
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
 	align-items: center;
 	margin: var(--large-value) auto var(--tiny-value) auto;
 	max-width: 65ch;
 }
 
 .filter-buttons {
-	max-width: 50ch;
+	width: 100%;
+	max-width: 65ch;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	align-items: center;
 	margin: var(--medium-value) auto;
+	padding: var(--medium-value) 0;
+	border-top: 2px solid var(--transparency-3);
+}
+
+.filter-buttons *:not(:last-child) {
+	margin-right: var(--tiny-value);
 }
 
 .inputTasks {
@@ -206,10 +213,14 @@ nav {
 .clearAll,
 .filter {
 	background-color: var(--transparency);
-	color: var(--redsalsa);
+	color: var(--mirtilo);
 	padding: var(--tiny-value);
 	border-radius: var(--tiny-value);
-	font-size: var(--small-value);
+	font-size: 0.8rem;
+}
+
+.temp_clear {
+	color: var(--redsalsa);
 }
 
 .clearAll {
@@ -331,12 +342,10 @@ input[type="text"] {
 	color: var(--spacecadet);
 }
 input[type="checkbox"] {
-	cursor: pointer;
-	width: var(--medium-value);
-	height: var(--medium-value);
-	vertical-align: bottom;
+	width: var(--small-value);
+	height: var(--small-value);
+	vertical-align: middle;
 	accent-color: var(--green);
-	/* accent-color: var(--redsalsa); */
 }
 
 input[type="text"]:focus {
