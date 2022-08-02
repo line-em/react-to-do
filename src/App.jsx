@@ -12,9 +12,12 @@ export default function App() {
 	const handleWindowResize = () => setWindowWidth(window.innerWidth);
 
 	const [headerTitle, setHeaderTitle] = useState("Today I will...");
-	const [tab, setTab] = useState("today");
+
+	const [selectView, setSelectView] = useState("all");
 
 	const [todos, setTodos] = useState(() => JSON.parse(localStorage.getItem("todos") || []));
+	const completedTodos = todos?.filter((todo) => todo.completed);
+	const activeTodos = todos?.filter((todo) => !todo.completed);
 
 	useEffect(() => {
 		localStorage.setItem("todos", JSON.stringify(todos));
@@ -77,6 +80,20 @@ export default function App() {
 		);
 	};
 
+	const changeView = (view) => {
+		switch (view) {
+			case "completed":
+				setSelectView("completed");
+				break;
+			case "active":
+				setSelectView("active");
+				break;
+			default:
+				setSelectView("all");
+				break;
+		}
+	};
+
 	// Window Listener
 	useEffect(() => {
 		window.addEventListener("resize", handleWindowResize);
@@ -99,24 +116,56 @@ export default function App() {
 			) : (
 				<>
 					<section className="filter-buttons">
-						<button className="action_button">Show All</button>
-						<button className="action_button">Completed</button>
-						<button className="action_button">Active</button>
+						<button className="action_button" onClick={() => changeView()}>
+							Show All
+						</button>
+						<button className="action_button" onClick={() => changeView("completed")}>
+							Completed
+						</button>
+						<button className="action_button" onClick={() => changeView("active")}>
+							Active
+						</button>
 					</section>
 					<section className="renderedList">
 						<ul className="flow" role="list">
-							{todos.map((todo) => (
-								<Todo
-									id={todo.id}
-									timestamp={todo.timestamp}
-									message={todo.message}
-									completed={todo.completed}
-									removeTodos={removeTodos}
-									editTodos={editTodos}
-									completeTodos={completeTodos}
-									key={todo.id}
-								/>
-							))}
+							{selectView === "all"
+								? todos.map((todo) => (
+										<Todo
+											id={todo.id}
+											timestamp={todo.timestamp}
+											message={todo.message}
+											completed={todo.completed}
+											removeTodos={removeTodos}
+											editTodos={editTodos}
+											completeTodos={completeTodos}
+											key={todo.id}
+										/>
+								  ))
+								: selectView === "completed"
+								? completedTodos.map((todo) => (
+										<Todo
+											id={todo.id}
+											timestamp={todo.timestamp}
+											message={todo.message}
+											completed={todo.completed}
+											removeTodos={removeTodos}
+											editTodos={editTodos}
+											completeTodos={completeTodos}
+											key={todo.id}
+										/>
+								  ))
+								: activeTodos.map((todo) => (
+										<Todo
+											id={todo.id}
+											timestamp={todo.timestamp}
+											message={todo.message}
+											completed={todo.completed}
+											removeTodos={removeTodos}
+											editTodos={editTodos}
+											completeTodos={completeTodos}
+											key={todo.id}
+										/>
+								  ))}
 						</ul>
 						{todos.length >= 2 ? (
 							<button
@@ -134,17 +183,12 @@ export default function App() {
 		</main>
 	);
 }
-// 	<div className="alerts alerts_style alert-danger" role="alert">
-// 	<strong>Error!</strong> You must enter a task.
-// </div>	<div className="alerts alerts_style alert-danger" role="alert">
-// 	<strong>Error!</strong> You must enter a task.
-// </div>
 
 // Things to do on refresh
 // useEffect(() => {
 // 	switchTabs("today");
 // }, []);
-
+// const [tab, setTab] = useState("today");
 // const switchTabs = (tab) => {
 // 	switch (tab) {
 // 		case "today":
