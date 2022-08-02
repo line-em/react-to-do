@@ -62,7 +62,11 @@ export default function App() {
 			<Header headerTitle={headerTitle} windowWidth={windowWidth} />
 			<Form addTodos={addTodos} />
 			{todos?.length === 0 ? (
-				<Warning message="Every task will be shown here." windowWidth={windowWidth} />
+				<Warning
+					type="info"
+					message="Every task will be shown here."
+					windowWidth={windowWidth}
+				/>
 			) : (
 				<>
 					<section className="filter-buttons">

@@ -1,14 +1,21 @@
 import React from "react";
-import { Lightbulb } from "phosphor-react";
+import { Lightbulb, WarningCircle } from "phosphor-react";
 
 export default function Warning(props) {
+	const icon = (type) => {
+		switch (type) {
+			case "info":
+				return <Lightbulb size={18} weight="fill" />;
+			case "error":
+				return <WarningCircle size={18} weight="fill" />;
+			default:
+				return <Lightbulb size={18} weight="fill" />;
+		}
+	};
+
 	return (
-		<section className="alerts alerts_style" role="detail">
-			<Lightbulb
-				size={props.windowWidth < 768 ? 18 : 22}
-				weight="fill"
-				color="var(--redsalsa)"
-			/>
+		<section className="alerts alerts_style text-red" role="detail">
+			{icon(props.type)}
 			{props.message}
 		</section>
 	);

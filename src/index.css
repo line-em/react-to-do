@@ -184,40 +184,7 @@ nav {
 	border-radius: var(--tiny-value);
 	border: var(--lavender) 1px solid;
 	background-color: var(--transparency);
-	color: var(--spacecadet);
 }
-
-.alerts_danger {
-	background-color: var(--redsalsa);
-}
-
-/*icons*/
-/* 
-.ph-clock-fill,
-.ph-x-square-fill {
-	display: inline;
-	color: var(--mirtilo);
-	font-size: 0.9rem;
-	padding-bottom: 0.15rem;
-	vertical-align: middle;
-}
-
-.ph-x-square-fill {
-	color: var(--redsalsa);
-}
-
-.ph-trash-fill,
-.ph-pencil-bold {
-	margin: 0.2rem;
-	content: "\fe30";
-	font: 1.2rem "Phosphor";
-	vertical-align: middle;
-	color: var(--redsalsa);
-	transition: ease 300ms;
-	background-color: var(--lavender);
-	padding: 0.2rem;
-	border-radius: var(--tiny-value);
-} */
 
 /* text elements */
 
