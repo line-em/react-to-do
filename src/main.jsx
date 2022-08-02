@@ -6,7 +6,19 @@ import "./index.css";
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<React.StrictMode>
 		<div className="wrapper">
-			<App />
+			<App />{" "}
+			<footer>
+				Coded with 💚 by{" "}
+				<a
+					href="https://github.com/line-em"
+					target="_blank"
+					rel="noopener noreferrer"
+					alt="Link to Open Trivia API"
+					role={"link"}
+				>
+					@Line-em.
+				</a>
+			</footer>
 		</div>
 	</React.StrictMode>
 );

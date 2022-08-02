@@ -41,7 +41,11 @@ export default function App() {
 	};
 
 	const removeTodos = (currentTodo) => {
-		setTodos(todos.filter((todo) => currentTodo !== todo));
+		setTodos(todos.filter((todo) => currentTodo !== todo.id));
+	};
+
+	const removeAll = () => {
+		setTodos([]);
 	};
 
 	// Window Listener
@@ -74,11 +78,21 @@ export default function App() {
 									timestamp={todo.timestamp}
 									message={todo.message}
 									completed={todo.completed}
+									removeTodos={removeTodos}
 									key={todo.id}
 								/>
 							))}
 						</ul>
-						<button className="action_button text-red clear-button">Clear All</button>
+						{todos.length >= 2 ? (
+							<button
+								className="action_button text-red clear-button"
+								onClick={removeAll}
+							>
+								Clear All
+							</button>
+						) : (
+							""
+						)}
 					</section>
 				</>
 			)}

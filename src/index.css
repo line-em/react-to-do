@@ -96,6 +96,7 @@ header {
 main {
 	padding: var(--medium-value) var(--large-value);
 	margin-block-start: var(--tiny-value);
+	margin-block-end: var(--medium-value);
 	text-align: center;
 }
 
@@ -258,11 +259,8 @@ li:hover {
 	cursor: pointer;
 }
 
-.task-actions > *:hover {
-	color: var(--redsalsa);
-}
-
 .task-actions *:hover {
+	color: var(--redsalsa);
 	transform: scale(1.05);
 }
 
