@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Header from "./Header";
-import ThemeSwitch from "./ThemeSwitch";
+import Header from "./components/Header";
+import ThemeSwitch from "./components/ThemeSwitch";
 import { Lightbulb, Pencil, Trash, Clock } from "phosphor-react";
 import { nanoid } from "nanoid";
+import Warning from "./components/Warning";
 
 export default function App() {
 	//Adjust icon sizing
@@ -67,68 +68,56 @@ export default function App() {
 	}, []);
 
 	return (
-		<>
-			<main className="main_style">
-				<ThemeSwitch />
-				<Header headerTitle={headerTitle} windowWidth={windowWidth} />
-				<section className="inputTasks">
-					<input type="text" name="tasks" placeholder="Add a task" />
-					<button>Add</button>
-				</section>
-				{todos?.length === 0 ? (
-					<section className="alerts alerts_style" role="detail">
-						<Lightbulb
-							size={windowWidth < 768 ? 18 : 22}
-							weight="fill"
-							color="var(--redsalsa)"
-						/>
-						Every task will be shown here.
+		<main className="main_style">
+			<ThemeSwitch />
+			<Header headerTitle={headerTitle} windowWidth={windowWidth} />
+			<section className="inputTasks">
+				<input type="text" name="tasks" placeholder="Add a task" />
+				<button>Add</button>
+			</section>
+			{todos?.length === 0 ? (
+				<Warning message="Every task will be shown here." />
+			) : (
+				<>
+					<section className="filter-buttons">
+						<button className="action_button">Show All</button>
+						<button className="action_button">Completed</button>
+						<button className="action_button">Active</button>
 					</section>
-				) : (
-					<>
-						<section className="filter-buttons">
-							<button className="action_button">Show All</button>
-							<button className="action_button">Completed</button>
-							<button className="action_button">Active</button>
-						</section>
-						<section className="renderedList">
-							<ul className="flow">
-								{todos.map((todo) => (
-									<li key={todo.id}>
-										<label htmlFor={`${todo.id} + "task"`}>
-											<input
-												name={`${todo.id} + "task"`}
-												type="checkbox"
-												id={`${todo.id} + "task"`}
-											/>
-											{todo.task}
-										</label>
+					<section className="renderedList">
+						<ul className="flow">
+							{todos.map((todo) => (
+								<li key={todo.id}>
+									<label htmlFor={`${todo.id} + "task"`}>
+										<input
+											name={`${todo.id} + "task"`}
+											type="checkbox"
+											id={`${todo.id} + "task"`}
+										/>
+										{todo.task}
+									</label>
 
-										<div className="task-actions">
-											<abbr title="edit task">
-												<Pencil size={18} weight="fill" />
-												<span className="tooltip">Edit</span>
-											</abbr>
-											<abbr title="delete task">
-												<Trash size={18} weight="fill" />
-											</abbr>
-										</div>
-										<p className="time">
-											<br />
-											<Clock size={18} weight="fill" />
-											{todo.timestamp}
-										</p>
-									</li>
-								))}
-							</ul>
-							<button className="action_button text-red clear-button">
-								Clear All
-							</button>
-						</section>
-					</>
-				)}
-			</main>
-		</>
+									<div className="task-actions">
+										<abbr title="edit task">
+											<Pencil size={18} weight="fill" />
+											<span className="tooltip">Edit</span>
+										</abbr>
+										<abbr title="delete task">
+											<Trash size={18} weight="fill" />
+										</abbr>
+									</div>
+									<span className="time">
+										<Clock size={18} weight="fill" />
+										{todo.timestamp}
+									</span>
+								</li>
+							))}
+						</ul>
+						<button className="action_button text-red clear-button">Clear All</button>
+					</section>
+				</>
+			)}
+		</main>
 	);
 }
 // 	<div className="alerts alerts_style alert-danger" role="alert">
