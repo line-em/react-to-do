@@ -48,8 +48,8 @@ export default function Todo(props) {
 	// different views
 	const editView = (
 		<li className="edit edit_style task_style">
-			{warning && <Warning message="Please enter a task" type="error" />}
 			<h5>Edit Todo:</h5>
+
 			<form className="edit_form" onSubmit={(e) => handleSave(e)}>
 				<input
 					type="text"
@@ -63,6 +63,7 @@ export default function Todo(props) {
 					Cancel
 				</button>
 			</form>
+			{warning && <Warning message="Please enter a task" type="error" />}
 		</li>
 	);
 	const defaultView = (

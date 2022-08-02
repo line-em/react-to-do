@@ -5,6 +5,8 @@ import { nanoid } from "nanoid";
 import Warning from "./components/Warning";
 import Todo from "./components/Todo";
 import Form from "./components/Form";
+import Filters from "./components/Filters";
+import RedButton from "./components/RedButton";
 
 export default function App() {
 	//Adjust icon sizing
@@ -16,8 +18,6 @@ export default function App() {
 	const [selectView, setSelectView] = useState("all");
 
 	const [todos, setTodos] = useState(() => JSON.parse(localStorage.getItem("todos") || []));
-	const completedTodos = todos?.filter((todo) => todo.completed);
-	const activeTodos = todos?.filter((todo) => !todo.completed);
 
 	useEffect(() => {
 		localStorage.setItem("todos", JSON.stringify(todos));
@@ -80,18 +80,27 @@ export default function App() {
 		);
 	};
 
-	const changeView = (view) => {
-		switch (view) {
-			case "completed":
-				setSelectView("completed");
-				break;
-			case "active":
-				setSelectView("active");
-				break;
-			default:
-				setSelectView("all");
-				break;
-		}
+	const filterTodo = (view) => {
+		const completedTodos = todos?.filter((todo) => todo.completed);
+		const activeTodos = todos?.filter((todo) => !todo.completed);
+
+		let targetView =
+			view === "all" ? todos : view === "completed" ? completedTodos : activeTodos;
+
+		const currentView = targetView.map((todo) => (
+			<Todo
+				id={todo.id}
+				timestamp={todo.timestamp}
+				message={todo.message}
+				completed={todo.completed}
+				removeTodos={removeTodos}
+				editTodos={editTodos}
+				completeTodos={completeTodos}
+				key={todo.id}
+			/>
+		));
+
+		return currentView;
 	};
 
 	// Window Listener
@@ -115,68 +124,12 @@ export default function App() {
 				/>
 			) : (
 				<>
-					<section className="filter-buttons">
-						<button className="action_button" onClick={() => changeView()}>
-							Show All
-						</button>
-						<button className="action_button" onClick={() => changeView("completed")}>
-							Completed
-						</button>
-						<button className="action_button" onClick={() => changeView("active")}>
-							Active
-						</button>
-					</section>
+					<Filters setSelectView={setSelectView} />
 					<section className="renderedList">
 						<ul className="flow" role="list">
-							{selectView === "all"
-								? todos.map((todo) => (
-										<Todo
-											id={todo.id}
-											timestamp={todo.timestamp}
-											message={todo.message}
-											completed={todo.completed}
-											removeTodos={removeTodos}
-											editTodos={editTodos}
-											completeTodos={completeTodos}
-											key={todo.id}
-										/>
-								  ))
-								: selectView === "completed"
-								? completedTodos.map((todo) => (
-										<Todo
-											id={todo.id}
-											timestamp={todo.timestamp}
-											message={todo.message}
-											completed={todo.completed}
-											removeTodos={removeTodos}
-											editTodos={editTodos}
-											completeTodos={completeTodos}
-											key={todo.id}
-										/>
-								  ))
-								: activeTodos.map((todo) => (
-										<Todo
-											id={todo.id}
-											timestamp={todo.timestamp}
-											message={todo.message}
-											completed={todo.completed}
-											removeTodos={removeTodos}
-											editTodos={editTodos}
-											completeTodos={completeTodos}
-											key={todo.id}
-										/>
-								  ))}
+							{filterTodo(selectView)}
 						</ul>
-						{todos.length >= 2 ? (
-							<button
-								className="action_button text-red clear-button"
-								onClick={removeAll}
-							>
-								Clear All
-							</button>
-						) : (
-							""
-						)}
+						{todos.length >= 2 && <RedButton text="Clear All" removeAll={removeAll} />}
 					</section>
 				</>
 			)}

@@ -140,7 +140,6 @@ nav {
 .edit_form {
 	display: grid;
 	grid-template-columns: 1fr minmax(50px, auto) minmax(50px, auto);
-	margin-block-end: var(--tiny-value);
 	gap: var(--tiny-value);
 }
 
@@ -181,7 +180,7 @@ nav {
 	align-items: center;
 	gap: var(--tiny-value);
 	width: fit-content;
-	margin: var(--medium-value) auto;
+	margin: var(--xs-value) auto var(--small-value);
 	font-size: var(--small-value);
 }
 
