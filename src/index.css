@@ -137,7 +137,6 @@ nav {
 }
 
 .tooltip {
-	display: none;
 	position: absolute;
 	width: max-content;
 	right: var(--large-value);
@@ -237,7 +236,7 @@ li {
 	padding: var(--tiny-value);
 	border-radius: var(--tiny-value);
 	display: grid;
-	grid-template-columns: 5fr var(--base-value);
+	grid-template-columns: 5fr var(--medium-value);
 	gap: var(--tiny-value);
 }
 
@@ -249,6 +248,22 @@ li:hover {
 .task-actions {
 	grid-row: span 2;
 	margin: auto;
+	background-color: var(--transparency);
+	padding: var(--deco-value);
+	border-radius: var(--tiny-value);
+}
+
+.task-actions > * {
+	color: var(--mirtilo);
+	cursor: pointer;
+}
+
+.task-actions > *:hover {
+	color: var(--redsalsa);
+}
+
+.task-actions *:hover {
+	transform: scale(1.05);
 }
 
 .time {
@@ -371,11 +386,23 @@ nav button:disabled {
 	h1 {
 		font-size: 2.5rem;
 	}
+
 	nav {
 		margin: -0.7rem -2rem;
 	}
+
 	.inputTasks {
 		grid-template-columns: 1fr;
+	}
+
+	.action_button {
+		font-size: var(--xs-value);
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.time {
+		display: none;
 	}
 }
 

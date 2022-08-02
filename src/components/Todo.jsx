@@ -1,5 +1,5 @@
 import React from "react";
-import { Pencil, Trash, Clock } from "phosphor-react";
+import { Pen, Trash, Clock } from "phosphor-react";
 
 export default function Todo(props) {
 	return (
@@ -11,8 +11,7 @@ export default function Todo(props) {
 
 			<div className="task-actions">
 				<abbr title="edit task">
-					<Pencil size={18} weight="fill" />
-					<span className="tooltip">Edit</span>
+					<Pen size={18} weight="fill" />
 				</abbr>
 				<abbr title="delete task">
 					<Trash size={18} weight="fill" />
