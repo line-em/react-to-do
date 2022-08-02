@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Header from "./components/Header";
 import ThemeSwitch from "./components/ThemeSwitch";
-import { Lightbulb, Pencil, Trash, Clock } from "phosphor-react";
 import { nanoid } from "nanoid";
 import Warning from "./components/Warning";
+import Todo from "./components/Todo";
 
 export default function App() {
 	//Adjust icon sizing
@@ -76,7 +76,7 @@ export default function App() {
 				<button>Add</button>
 			</section>
 			{todos?.length === 0 ? (
-				<Warning message="Every task will be shown here." />
+				<Warning message="Every task will be shown here." windowWidth={windowWidth} />
 			) : (
 				<>
 					<section className="filter-buttons">
@@ -87,30 +87,12 @@ export default function App() {
 					<section className="renderedList">
 						<ul className="flow">
 							{todos.map((todo) => (
-								<li key={todo.id}>
-									<label htmlFor={`${todo.id} + "task"`}>
-										<input
-											name={`${todo.id} + "task"`}
-											type="checkbox"
-											id={`${todo.id} + "task"`}
-										/>
-										{todo.task}
-									</label>
-
-									<div className="task-actions">
-										<abbr title="edit task">
-											<Pencil size={18} weight="fill" />
-											<span className="tooltip">Edit</span>
-										</abbr>
-										<abbr title="delete task">
-											<Trash size={18} weight="fill" />
-										</abbr>
-									</div>
-									<span className="time">
-										<Clock size={18} weight="fill" />
-										{todo.timestamp}
-									</span>
-								</li>
+								<Todo
+									id={todo.id}
+									timestamp={todo.timestamp}
+									message={todo.task}
+									completed={todo.completed}
+								/>
 							))}
 						</ul>
 						<button className="action_button text-red clear-button">Clear All</button>
