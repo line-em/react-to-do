@@ -97,7 +97,9 @@ export default function App() {
 													className="ph-trash-fill jello deleteThis"
 													id="delete${task.id}"
 													alt="delete task"
-												></i>
+												>
+													x
+												</i>
 											</abbr>
 										</div>
 									</li>
