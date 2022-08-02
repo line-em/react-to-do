@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import ThemeSwitch from "./ThemeSwitch";
 import { Lightbulb, Pencil, Trash, Clock } from "phosphor-react";
+import { nanoid } from "nanoid";
 
 export default function App() {
 	//Adjust icon sizing
@@ -11,7 +12,24 @@ export default function App() {
 	const [headerTitle, setHeaderTitle] = useState("");
 	const [tab, setTab] = useState("today");
 	const [todos, setTodos] = useState([
-		{ id: 1, task: "Learn React", timestamp: "2020-01-01", completed: false }
+		{
+			id: nanoid(),
+			task: "Learn ReactLearn ReactLearn ReactLearn ReactLearn ReactLearn ReactLearn ReactLearn ReactLearn React",
+			timestamp: "01-01",
+			completed: false
+		},
+		{
+			id: nanoid(),
+			task: "Learn ReactLearn ReactLearn ReactLearn ReactLearn ReactLearn ReactLearn ReactLearn ReactLearn React",
+			timestamp: "2020-01-01",
+			completed: false
+		},
+		{
+			id: nanoid(),
+			task: "Learn React",
+			timestamp: "2020-01-01",
+			completed: false
+		}
 	]);
 
 	const switchTabs = (tab) => {
@@ -74,34 +92,32 @@ export default function App() {
 							<button className="action_button">Active</button>
 						</section>
 						<section className="renderedList">
-							<ul>
+							<ul className="flow">
 								{todos.map((todo) => (
 									<li key={todo.id}>
-										<label className="tasks" htmlFor={todo.id}>
-											<input name={todo.id} type="checkbox" />
+										<label htmlFor={`${todo.id} + "task"`}>
+											<input
+												name={`${todo.id} + "task"`}
+												type="checkbox"
+												id={`${todo.id} + "task"`}
+											/>
 											{todo.task}
-											<p className="time">
-												<Clock size={18} weight="fill" />
-												{todo.timestamp}
-											</p>
 										</label>
 
-										<div>
+										<div className="task-actions">
 											<abbr title="edit task">
 												<Pencil size={18} weight="fill" />
 												<span className="tooltip">Edit</span>
 											</abbr>
 											<abbr title="delete task">
 												<Trash size={18} weight="fill" />
-												<i
-													className="ph-trash-fill jello deleteThis"
-													id="delete${task.id}"
-													alt="delete task"
-												>
-													x
-												</i>
 											</abbr>
 										</div>
+										<p className="time">
+											<br />
+											<Clock size={18} weight="fill" />
+											{todo.timestamp}
+										</p>
 									</li>
 								))}
 							</ul>

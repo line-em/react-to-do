@@ -36,6 +36,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:18.0.15"],\
             ["@types/react-dom", "npm:18.0.6"],\
             ["@vitejs/plugin-react", "virtual:b710176fa9295a53c1d4bceea81b71d026a6827da20822637f11910e792bafdbf396ea9c74b79af90c8020bebd558b0c83a1a3a87234a92f29b87cdc05e47c21#npm:2.0.0"],\
+            ["nanoid", "npm:4.0.0"],\
             ["phosphor-react", "virtual:b710176fa9295a53c1d4bceea81b71d026a6827da20822637f11910e792bafdbf396ea9c74b79af90c8020bebd558b0c83a1a3a87234a92f29b87cdc05e47c21#npm:1.4.1"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:b710176fa9295a53c1d4bceea81b71d026a6827da20822637f11910e792bafdbf396ea9c74b79af90c8020bebd558b0c83a1a3a87234a92f29b87cdc05e47c21#npm:18.2.0"],\
@@ -1675,6 +1676,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["nanoid", "npm:3.3.4"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:4.0.0", {\
+          "packageLocation": "./.yarn/cache/nanoid-npm-4.0.0-924f5c6312-7d5946df5c.zip/node_modules/nanoid/",\
+          "packageDependencies": [\
+            ["nanoid", "npm:4.0.0"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["negotiator", [\
@@ -2160,6 +2168,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:18.0.15"],\
             ["@types/react-dom", "npm:18.0.6"],\
             ["@vitejs/plugin-react", "virtual:b710176fa9295a53c1d4bceea81b71d026a6827da20822637f11910e792bafdbf396ea9c74b79af90c8020bebd558b0c83a1a3a87234a92f29b87cdc05e47c21#npm:2.0.0"],\
+            ["nanoid", "npm:4.0.0"],\
             ["phosphor-react", "virtual:b710176fa9295a53c1d4bceea81b71d026a6827da20822637f11910e792bafdbf396ea9c74b79af90c8020bebd558b0c83a1a3a87234a92f29b87cdc05e47c21#npm:1.4.1"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:b710176fa9295a53c1d4bceea81b71d026a6827da20822637f11910e792bafdbf396ea9c74b79af90c8020bebd558b0c83a1a3a87234a92f29b87cdc05e47c21#npm:18.2.0"],\
