@@ -68,6 +68,11 @@ export default function App() {
 					</section>
 				) : (
 					<>
+						<section className="filter-buttons">
+							<button className="action_button">Show All</button>
+							<button className="action_button">Completed</button>
+							<button className="action_button">Active</button>
+						</section>
 						<section className="renderedList">
 							<ul>
 								{todos.map((todo) => (
@@ -98,20 +103,9 @@ export default function App() {
 									</li>
 								))}
 							</ul>
-							<button className="filter temp_clear">Clear All</button>
-						</section>
-						<section className="filter-buttons">
-							<div>
-								<button className="filter" id="show-all">
-									Show All
-								</button>
-								<button className="filter" id="show-complete">
-									Completed
-								</button>
-								<button className="filter" id="show-active">
-									Active
-								</button>
-							</div>
+							<button className="action_button text-red clear-button">
+								Clear All
+							</button>
 						</section>
 					</>
 				)}

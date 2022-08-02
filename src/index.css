@@ -179,21 +179,21 @@ nav {
 	width: 100%;
 	max-width: 65ch;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
-	margin: var(--medium-value) auto;
-	padding: var(--medium-value) 0;
-	border-top: 2px solid var(--transparency-3);
+	margin: var(--small-value) auto;
 }
 
-.filter-buttons *:not(:last-child) {
-	margin-right: var(--tiny-value);
+.clear-button {
+	margin-block-start: var(--small-value);
+	margin-inline: auto;
+	display: flex;
 }
 
 .inputTasks {
 	display: grid;
 	grid-template-columns: 1fr minmax(50px, auto);
-	margin: var(--medium-value) 0;
+	margin: var(--tiny-value) 0 var(--base-value) 0;
 	gap: var(--tiny-value);
 }
 
@@ -210,22 +210,12 @@ nav {
 
 /* container styling */
 
-.clearAll,
-.filter {
+.action_button {
 	background-color: var(--transparency);
 	color: var(--mirtilo);
-	padding: var(--tiny-value);
+	padding: 0.1rem var(--tiny-value);
 	border-radius: var(--tiny-value);
 	font-size: 0.8rem;
-}
-
-.temp_clear {
-	color: var(--redsalsa);
-}
-
-.clearAll {
-	margin: var(--medium-value) auto 0 auto;
-	display: flex;
 }
 
 .iconNight {
@@ -424,6 +414,10 @@ nav button:disabled {
 
 .complete label {
 	text-decoration: line-through;
+}
+
+.text-red {
+	color: var(--redsalsa);
 }
 
 @media screen and (max-width: 600px) {
