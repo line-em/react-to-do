@@ -19,7 +19,7 @@ export default function Form(props) {
 
 	return (
 		<>
-			<form className="inputTasks" onSubmit={(e) => handleSubmit(e)}>
+			<form className="add_tasks_form" onSubmit={(e) => handleSubmit(e)}>
 				<input
 					type="text"
 					name="tasks"

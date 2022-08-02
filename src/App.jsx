@@ -48,6 +48,35 @@ export default function App() {
 		setTodos([]);
 	};
 
+	const editTodos = (currentTodo, newMessage, newTimestamp) => {
+		setTodos(
+			todos.map((todo) => {
+				if (todo.id === currentTodo) {
+					return {
+						...todo,
+						message: newMessage,
+						timestamp: "Updated at " + newTimestamp
+					};
+				}
+				return todo;
+			})
+		);
+	};
+
+	const completeTodos = (currentTodo) => {
+		setTodos(
+			todos.map((todo) => {
+				if (todo.id === currentTodo) {
+					return {
+						...todo,
+						completed: !todo.completed
+					};
+				}
+				return todo;
+			})
+		);
+	};
+
 	// Window Listener
 	useEffect(() => {
 		window.addEventListener("resize", handleWindowResize);
@@ -83,6 +112,8 @@ export default function App() {
 									message={todo.message}
 									completed={todo.completed}
 									removeTodos={removeTodos}
+									editTodos={editTodos}
+									completeTodos={completeTodos}
 									key={todo.id}
 								/>
 							))}

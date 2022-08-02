@@ -130,10 +130,17 @@ nav {
 	display: flex;
 }
 
-.inputTasks {
+.add_tasks_form {
 	display: grid;
 	grid-template-columns: 1fr minmax(50px, auto);
 	margin: var(--tiny-value) 0 var(--base-value) 0;
+	gap: var(--tiny-value);
+}
+
+.edit_form {
+	display: grid;
+	grid-template-columns: 1fr minmax(50px, auto) minmax(50px, auto);
+	margin-block-end: var(--tiny-value);
 	gap: var(--tiny-value);
 }
 
@@ -199,16 +206,29 @@ ul {
 	text-align: left;
 }
 
-li {
-	background-color: var(--transparency);
-	padding: var(--tiny-value);
-	border-radius: var(--tiny-value);
+.tasks {
 	display: grid;
 	grid-template-columns: 5fr var(--medium-value);
 	gap: var(--tiny-value);
 }
 
-li:hover {
+.edit {
+	display: flex;
+	gap: var(--small-value);
+	flex-direction: column;
+}
+
+.task_style {
+	background-color: var(--transparency);
+	padding: var(--tiny-value);
+	border-radius: var(--tiny-value);
+}
+
+.edit_style {
+	border: var(--transparency-2) 1px solid;
+}
+
+.task_style:hover {
 	box-shadow: 0 0 var(--medium-value) var(--transparency);
 	transition: 300ms ease;
 }
