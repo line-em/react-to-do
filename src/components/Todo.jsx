@@ -3,7 +3,7 @@ import { Pencil, Trash, Clock } from "phosphor-react";
 
 export default function Todo(props) {
 	return (
-		<li key={props.id}>
+		<li>
 			<label htmlFor={`${props.id} + "task"`}>
 				<input name={`${props.id} + "task"`} type="checkbox" id={`${props.id} + "task"`} />
 				{props.message}

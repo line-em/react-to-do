@@ -237,7 +237,7 @@ li {
 	padding: var(--tiny-value);
 	border-radius: var(--tiny-value);
 	display: grid;
-	grid-template-columns: 5fr var(--medium-value);
+	grid-template-columns: 5fr var(--base-value);
 	gap: var(--tiny-value);
 }
 

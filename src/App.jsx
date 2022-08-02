@@ -4,60 +4,45 @@ import ThemeSwitch from "./components/ThemeSwitch";
 import { nanoid } from "nanoid";
 import Warning from "./components/Warning";
 import Todo from "./components/Todo";
+import Form from "./components/Form";
 
 export default function App() {
 	//Adjust icon sizing
 	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 	const handleWindowResize = () => setWindowWidth(window.innerWidth);
 
-	const [headerTitle, setHeaderTitle] = useState("");
+	const [headerTitle, setHeaderTitle] = useState("Today I will...");
 	const [tab, setTab] = useState("today");
-	const [todos, setTodos] = useState([
-		{
-			id: nanoid(),
-			task: "Learn ReactLearn ReactLearn ReactLearn ReactLearn ReactLearn ReactLearn ReactLearn ReactLearn React",
-			timestamp: "01-01",
-			completed: false
-		},
-		{
-			id: nanoid(),
-			task: "Learn ReactLearn ReactLearn ReactLearn ReactLearn ReactLearn ReactLearn ReactLearn ReactLearn React",
-			timestamp: "2020-01-01",
-			completed: false
-		},
-		{
-			id: nanoid(),
-			task: "Learn React",
-			timestamp: "2020-01-01",
-			completed: false
-		}
-	]);
 
-	const switchTabs = (tab) => {
-		switch (tab) {
-			case "today":
-				setHeaderTitle("Today I will...");
-				setTab("today");
-				break;
-			case "completed":
-				setHeaderTitle("Previously, I did...");
-				setTab("completed");
-				break;
-			case "all":
-				setHeaderTitle("All my tasks...");
-				setTab("all");
-				break;
-			default:
-				setHeaderTitle("My todos...");
-				setTab("todos");
-				break;
-		}
+	const [todos, setTodos] = useState(() => JSON.parse(localStorage.getItem("todos") || []));
+
+	useEffect(() => {
+		localStorage.setItem("todos", JSON.stringify(todos));
+	}, [todos]);
+
+	const addTodos = (writing) => {
+		setTodos([
+			...todos,
+			{
+				id: nanoid(),
+				message: writing,
+				timestamp: new Date().toLocaleString("en-US", {
+					weekday: "short",
+					month: "short",
+					day: "numeric",
+					year: "numeric",
+					hour: "numeric",
+					minute: "numeric",
+					second: "numeric"
+				}),
+				completed: false
+			}
+		]);
 	};
 
-	// Things to do on refresh
-	useEffect(() => {
-		switchTabs("today");
-	}, []);
+	const removeTodos = (currentTodo) => {
+		setTodos(todos.filter((todo) => currentTodo !== todo));
+	};
 
 	// Window Listener
 	useEffect(() => {
@@ -71,10 +56,7 @@ export default function App() {
 		<main className="main_style">
 			<ThemeSwitch />
 			<Header headerTitle={headerTitle} windowWidth={windowWidth} />
-			<section className="inputTasks">
-				<input type="text" name="tasks" placeholder="Add a task" />
-				<button>Add</button>
-			</section>
+			<Form addTodos={addTodos} />
 			{todos?.length === 0 ? (
 				<Warning message="Every task will be shown here." windowWidth={windowWidth} />
 			) : (
@@ -85,13 +67,14 @@ export default function App() {
 						<button className="action_button">Active</button>
 					</section>
 					<section className="renderedList">
-						<ul className="flow">
+						<ul className="flow" role="list">
 							{todos.map((todo) => (
 								<Todo
 									id={todo.id}
 									timestamp={todo.timestamp}
-									message={todo.task}
+									message={todo.message}
 									completed={todo.completed}
+									key={todo.id}
 								/>
 							))}
 						</ul>
@@ -107,3 +90,29 @@ export default function App() {
 // </div>	<div className="alerts alerts_style alert-danger" role="alert">
 // 	<strong>Error!</strong> You must enter a task.
 // </div>
+
+// Things to do on refresh
+// useEffect(() => {
+// 	switchTabs("today");
+// }, []);
+
+// const switchTabs = (tab) => {
+// 	switch (tab) {
+// 		case "today":
+// 			setHeaderTitle("Today I will...");
+// 			setTab("today");
+// 			break;
+// 		case "completed":
+// 			setHeaderTitle("Previously, I did...");
+// 			setTab("completed");
+// 			break;
+// 		case "all":
+// 			setHeaderTitle("All my tasks...");
+// 			setTab("all");
+// 			break;
+// 		default:
+// 			setHeaderTitle("My todos...");
+// 			setTab("todos");
+// 			break;
+// 	}
+// };
