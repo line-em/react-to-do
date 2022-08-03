@@ -210,6 +210,19 @@ ul {
 	text-align: left;
 }
 
+a {
+	text-underline-offset: var(--deco-value);
+	text-decoration: dotted underline 2px var(--lavender);
+	color: var(--redsalsa);
+	transition: all 0.18s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+a:hover {
+	transition: all 0.18s cubic-bezier(0.77, 0, 0.175, 1);
+	color: var(--transparency-2);
+	text-underline-offset: var(--tiny-value);
+}
+
 .tasks {
 	display: grid;
 	grid-template-columns: 5fr var(--medium-value);
