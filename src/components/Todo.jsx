@@ -74,6 +74,7 @@ export default function Todo(props) {
 					type="checkbox"
 					id={`${props.id}-task`}
 					onClick={() => props.completeTodos(props.id)}
+					checked={props.completed}
 				/>
 				<span style={completedStyle}>{props.message}</span>
 			</label>
