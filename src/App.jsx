@@ -124,7 +124,7 @@ export default function App() {
 				/>
 			) : (
 				<>
-					<Filters setSelectView={setSelectView} />
+					<Filters setSelectView={setSelectView} selectView={selectView} />
 					<section className="renderedList">
 						<ul className="flow" role="list">
 							{filterTodo(selectView)}
@@ -136,29 +136,3 @@ export default function App() {
 		</main>
 	);
 }
-
-// Things to do on refresh
-// useEffect(() => {
-// 	switchTabs("today");
-// }, []);
-// const [tab, setTab] = useState("today");
-// const switchTabs = (tab) => {
-// 	switch (tab) {
-// 		case "today":
-// 			setHeaderTitle("Today I will...");
-// 			setTab("today");
-// 			break;
-// 		case "completed":
-// 			setHeaderTitle("Previously, I did...");
-// 			setTab("completed");
-// 			break;
-// 		case "all":
-// 			setHeaderTitle("All my tasks...");
-// 			setTab("all");
-// 			break;
-// 		default:
-// 			setHeaderTitle("My todos...");
-// 			setTab("todos");
-// 			break;
-// 	}
-// };
