@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import Header from "./components/Header";
-import ThemeSwitch from "./components/ThemeSwitch";
+import Header from "./components/Header.jsx";
+import ThemeSwitch from "./components/ThemeSwitch.jsx";
 import { nanoid } from "nanoid";
-import Warning from "./components/Warning";
-import Todo from "./components/Todo";
-import Form from "./components/Form";
-import Filters from "./components/Filters";
-import RedButton from "./components/RedButton";
+import Warning from "./components/Warning.jsx";
+import Todo from "./components/Todo.jsx";
+import Form from "./components/Form.jsx";
+import Filters from "./components/Filters.jsx";
+import RedButton from "./components/RedButton.jsx";
 
 export default function App() {
 	//Adjust icon sizing
@@ -17,11 +17,21 @@ export default function App() {
 
 	const [selectView, setSelectView] = useState("all");
 
-	const [todos, setTodos] = useState(() => JSON.parse(localStorage.getItem("todos") || []));
+	const [todos, setTodos] = useState(() => JSON.parse(localStorage.getItem("todos")) || []);
 
 	useEffect(() => {
 		localStorage.setItem("todos", JSON.stringify(todos));
 	}, [todos]);
+
+	useEffect(() => {
+		setHeaderTitle(
+			selectView === "all"
+				? "Today I will..."
+				: selectView === "completed"
+				? "Today I did..."
+				: "Todat I will..."
+		);
+	}, [selectView]);
 
 	const addTodos = (writing) => {
 		setTodos([

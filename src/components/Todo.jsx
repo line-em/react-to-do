@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Pen, Trash, Clock } from "phosphor-react";
-import Warning from "./Warning";
+import Warning from "./Warning.jsx";
 
 export default function Todo(props) {
 	const [newMessage, setNewMessage] = useState("");

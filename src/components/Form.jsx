@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Warning from "./Warning";
+import Warning from "./Warning.jsx";
 
 export default function Form(props) {
 	const [writing, setWriting] = useState("");
