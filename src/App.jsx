@@ -29,7 +29,7 @@ export default function App() {
 				? "Today I will..."
 				: selectView === "completed"
 				? "Today I did..."
-				: "Todat I will..."
+				: "Today I will..."
 		);
 	}, [selectView]);
 
