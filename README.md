@@ -2,8 +2,6 @@
 
 ## [Check out the live web app. ❤️](https://line-em.github.io/react-to-do/)
 
----
-
 ## About
 
 I'm so happy about this project! 🎉
