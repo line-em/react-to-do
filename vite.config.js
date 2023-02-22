@@ -7,5 +7,10 @@ export default defineConfig({
 		extensions: [".js", ".mjs"]
 	},
 	plugins: [react()],
+	test: {
+		globals: true,
+		environment: "happy-dom",
+		include: ["**/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"]
+	},
 	base: "/react-to-do/"
 });

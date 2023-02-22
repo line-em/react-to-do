@@ -14,7 +14,7 @@ export default function Warning(props) {
 	};
 
 	return (
-		<section className="alerts alerts_style text-red" role="detail">
+		<section className="alerts alerts_style text-red" role="alert">
 			{icon(props.type)}
 			{props.message}
 		</section>
