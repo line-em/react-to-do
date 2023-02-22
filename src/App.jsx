@@ -17,7 +17,9 @@ export default function App() {
 
 	const [selectView, setSelectView] = useState("all");
 
-	const [todos, setTodos] = useState(() => JSON.parse(localStorage.getItem("todos")) || []);
+	const [todos, setTodos] = useState(
+		() => JSON.parse(localStorage.getItem("todos")) || []
+	);
 
 	useEffect(() => {
 		localStorage.setItem("todos", JSON.stringify(todos));
@@ -139,7 +141,9 @@ export default function App() {
 						<ul className="flow" role="list">
 							{filterTodo(selectView)}
 						</ul>
-						{todos.length >= 2 && <RedButton text="Clear All" removeAll={removeAll} />}
+						{todos.length >= 2 && (
+							<RedButton text="Clear All" removeAll={removeAll} />
+						)}
 					</section>
 				</>
 			)}
