@@ -33,7 +33,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-dom", "npm:18.0.6"],\
             ["@vitejs/plugin-react", "virtual:b710176fa9295a53c1d4bceea81b71d026a6827da20822637f11910e792bafdbf396ea9c74b79af90c8020bebd558b0c83a1a3a87234a92f29b87cdc05e47c21#npm:2.0.0"],\
             ["@vitest/ui", "npm:0.28.5"],\
-            ["happy-dom", "npm:8.7.1"],\
+            ["happy-dom", "npm:20.0.11"],\
             ["nanoid", "npm:4.0.0"],\
             ["phosphor-react", "virtual:b710176fa9295a53c1d4bceea81b71d026a6827da20822637f11910e792bafdbf396ea9c74b79af90c8020bebd558b0c83a1a3a87234a92f29b87cdc05e47c21#npm:1.4.1"],\
             ["react", "npm:18.2.0"],\
@@ -984,6 +984,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:18.14.0"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:20.19.26", {\
+          "packageLocation": "./.yarn/cache/@types-node-npm-20.19.26-b0284668aa-2d7f44cade.zip/node_modules/@types/node/",\
+          "packageDependencies": [\
+            ["@types/node", "npm:20.19.26"],\
+            ["undici-types", "npm:6.21.0"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["@types/prop-types", [\
@@ -1022,6 +1030,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-scheduler-npm-0.16.2-ba3a7d8c68-b6b4dcfeae.zip/node_modules/@types/scheduler/",\
           "packageDependencies": [\
             ["@types/scheduler", "npm:0.16.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/whatwg-mimetype", [\
+        ["npm:3.0.2", {\
+          "packageLocation": "./.yarn/cache/@types-whatwg-mimetype-npm-3.0.2-cf2bd6921c-30e2599ae0.zip/node_modules/@types/whatwg-mimetype/",\
+          "packageDependencies": [\
+            ["@types/whatwg-mimetype", "npm:3.0.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -1531,15 +1548,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["convert-source-map", "npm:1.8.0"],\
             ["safe-buffer", "npm:5.1.2"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["css.escape", [\
-        ["npm:1.5.1", {\
-          "packageLocation": "./.yarn/cache/css.escape-npm-1.5.1-b24d2ba77a-f6d38088d8.zip/node_modules/css.escape/",\
-          "packageDependencies": [\
-            ["css.escape", "npm:1.5.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -2208,15 +2216,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["happy-dom", [\
-        ["npm:8.7.1", {\
-          "packageLocation": "./.yarn/cache/happy-dom-npm-8.7.1-8e3dbf46e5-ca4d6db353.zip/node_modules/happy-dom/",\
+        ["npm:20.0.11", {\
+          "packageLocation": "./.yarn/cache/happy-dom-npm-20.0.11-c257ea73f5-51bc52ce28.zip/node_modules/happy-dom/",\
           "packageDependencies": [\
-            ["happy-dom", "npm:8.7.1"],\
-            ["css.escape", "npm:1.5.1"],\
-            ["he", "npm:1.2.0"],\
-            ["node-fetch", "virtual:8e3dbf46e54a0f976f57a881353f6904bcabd97a5ad0bcd970df0097a6465d802125cb2d8f982e18a2c0c92f1948123bceb6b78075073971c4c848a63bd6a854#npm:2.6.9"],\
-            ["webidl-conversions", "npm:7.0.0"],\
-            ["whatwg-encoding", "npm:2.0.0"],\
+            ["happy-dom", "npm:20.0.11"],\
+            ["@types/node", "npm:20.19.26"],\
+            ["@types/whatwg-mimetype", "npm:3.0.2"],\
             ["whatwg-mimetype", "npm:3.0.0"]\
           ],\
           "linkType": "HARD"\
@@ -2291,15 +2296,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/has-unicode-npm-2.0.1-893adb4747-1eab07a743.zip/node_modules/has-unicode/",\
           "packageDependencies": [\
             ["has-unicode", "npm:2.0.1"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["he", [\
-        ["npm:1.2.0", {\
-          "packageLocation": "./.yarn/cache/he-npm-1.2.0-3b73a2ff07-3d4d6babcc.zip/node_modules/he/",\
-          "packageDependencies": [\
-            ["he", "npm:1.2.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -2977,29 +2973,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/negotiator-npm-0.6.3-9d50e36171-b8ffeb1e26.zip/node_modules/negotiator/",\
           "packageDependencies": [\
             ["negotiator", "npm:0.6.3"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["node-fetch", [\
-        ["npm:2.6.9", {\
-          "packageLocation": "./.yarn/cache/node-fetch-npm-2.6.9-9fc9a54529-acb04f9ce7.zip/node_modules/node-fetch/",\
-          "packageDependencies": [\
-            ["node-fetch", "npm:2.6.9"]\
-          ],\
-          "linkType": "SOFT"\
-        }],\
-        ["virtual:8e3dbf46e54a0f976f57a881353f6904bcabd97a5ad0bcd970df0097a6465d802125cb2d8f982e18a2c0c92f1948123bceb6b78075073971c4c848a63bd6a854#npm:2.6.9", {\
-          "packageLocation": "./.yarn/__virtual__/node-fetch-virtual-9d405fb4a2/0/cache/node-fetch-npm-2.6.9-9fc9a54529-acb04f9ce7.zip/node_modules/node-fetch/",\
-          "packageDependencies": [\
-            ["node-fetch", "virtual:8e3dbf46e54a0f976f57a881353f6904bcabd97a5ad0bcd970df0097a6465d802125cb2d8f982e18a2c0c92f1948123bceb6b78075073971c4c848a63bd6a854#npm:2.6.9"],\
-            ["@types/encoding", null],\
-            ["encoding", null],\
-            ["whatwg-url", "npm:5.0.0"]\
-          ],\
-          "packagePeers": [\
-            "@types/encoding",\
-            "encoding"\
           ],\
           "linkType": "HARD"\
         }]\
@@ -3824,7 +3797,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-dom", "npm:18.0.6"],\
             ["@vitejs/plugin-react", "virtual:b710176fa9295a53c1d4bceea81b71d026a6827da20822637f11910e792bafdbf396ea9c74b79af90c8020bebd558b0c83a1a3a87234a92f29b87cdc05e47c21#npm:2.0.0"],\
             ["@vitest/ui", "npm:0.28.5"],\
-            ["happy-dom", "npm:8.7.1"],\
+            ["happy-dom", "npm:20.0.11"],\
             ["nanoid", "npm:4.0.0"],\
             ["phosphor-react", "virtual:b710176fa9295a53c1d4bceea81b71d026a6827da20822637f11910e792bafdbf396ea9c74b79af90c8020bebd558b0c83a1a3a87234a92f29b87cdc05e47c21#npm:1.4.1"],\
             ["react", "npm:18.2.0"],\
@@ -3844,15 +3817,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["tr46", [\
-        ["npm:0.0.3", {\
-          "packageLocation": "./.yarn/cache/tr46-npm-0.0.3-de53018915-726321c5ea.zip/node_modules/tr46/",\
-          "packageDependencies": [\
-            ["tr46", "npm:0.0.3"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
       ["type-detect", [\
         ["npm:4.0.8", {\
           "packageLocation": "./.yarn/cache/type-detect-npm-4.0.8-8d8127b901-62b5628bff.zip/node_modules/type-detect/",\
@@ -3867,6 +3831,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/ufo-npm-1.1.0-2ae78d715d-f4098df457.zip/node_modules/ufo/",\
           "packageDependencies": [\
             ["ufo", "npm:1.1.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["undici-types", [\
+        ["npm:6.21.0", {\
+          "packageLocation": "./.yarn/cache/undici-types-npm-6.21.0-eb2b0ed56a-46331c7d60.zip/node_modules/undici-types/",\
+          "packageDependencies": [\
+            ["undici-types", "npm:6.21.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -4091,7 +4064,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["cac", "npm:6.7.14"],\
             ["chai", "npm:4.3.7"],\
             ["debug", "virtual:4758feee42453c0e31b0d2032a7b1362d6b06281699830d2da9a056f2cca72bd2c5cfdb74005fdf03a64876be8eaca2dd7b0fc2dc59d14318badf19cb22ba18e#npm:4.3.4"],\
-            ["happy-dom", "npm:8.7.1"],\
+            ["happy-dom", "npm:20.0.11"],\
             ["jsdom", null],\
             ["local-pkg", "npm:0.4.3"],\
             ["pathe", "npm:1.1.0"],\
@@ -4121,48 +4094,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["webidl-conversions", [\
-        ["npm:3.0.1", {\
-          "packageLocation": "./.yarn/cache/webidl-conversions-npm-3.0.1-60310f6a2b-c92a0a6ab9.zip/node_modules/webidl-conversions/",\
-          "packageDependencies": [\
-            ["webidl-conversions", "npm:3.0.1"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
-        ["npm:7.0.0", {\
-          "packageLocation": "./.yarn/cache/webidl-conversions-npm-7.0.0-e8c8e30c68-f05588567a.zip/node_modules/webidl-conversions/",\
-          "packageDependencies": [\
-            ["webidl-conversions", "npm:7.0.0"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["whatwg-encoding", [\
-        ["npm:2.0.0", {\
-          "packageLocation": "./.yarn/cache/whatwg-encoding-npm-2.0.0-d7451f51b4-7087810c41.zip/node_modules/whatwg-encoding/",\
-          "packageDependencies": [\
-            ["whatwg-encoding", "npm:2.0.0"],\
-            ["iconv-lite", "npm:0.6.3"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
       ["whatwg-mimetype", [\
         ["npm:3.0.0", {\
           "packageLocation": "./.yarn/cache/whatwg-mimetype-npm-3.0.0-5b617710c1-ce08bbb36b.zip/node_modules/whatwg-mimetype/",\
           "packageDependencies": [\
             ["whatwg-mimetype", "npm:3.0.0"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["whatwg-url", [\
-        ["npm:5.0.0", {\
-          "packageLocation": "./.yarn/cache/whatwg-url-npm-5.0.0-374fb45e60-b8daed4ad3.zip/node_modules/whatwg-url/",\
-          "packageDependencies": [\
-            ["whatwg-url", "npm:5.0.0"],\
-            ["tr46", "npm:0.0.3"],\
-            ["webidl-conversions", "npm:3.0.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -6071,7 +6007,8 @@ class ZipFS extends BasePortableFakeFS {
           stream$1.destroy();
         },
         bytesRead: 0,
-        path: p
+        path: p,
+        pending: false
       }
     );
     const immediate = setImmediate(async () => {
@@ -6112,11 +6049,12 @@ class ZipFS extends BasePortableFakeFS {
         }
       }),
       {
-        bytesWritten: 0,
-        path: p,
         close() {
           stream$1.destroy();
-        }
+        },
+        bytesWritten: 0,
+        path: p,
+        pending: false
       }
     );
     stream$1.on(`data`, (chunk) => {
@@ -7056,18 +6994,10 @@ class ProxiedFS extends FakeFS {
     return this.baseFs.symlinkSync(mappedTarget, mappedP, type);
   }
   async readFilePromise(p, encoding) {
-    if (encoding === `utf8`) {
-      return this.baseFs.readFilePromise(this.fsMapToBase(p), encoding);
-    } else {
-      return this.baseFs.readFilePromise(this.fsMapToBase(p), encoding);
-    }
+    return this.baseFs.readFilePromise(this.fsMapToBase(p), encoding);
   }
   readFileSync(p, encoding) {
-    if (encoding === `utf8`) {
-      return this.baseFs.readFileSync(this.fsMapToBase(p), encoding);
-    } else {
-      return this.baseFs.readFileSync(this.fsMapToBase(p), encoding);
-    }
+    return this.baseFs.readFileSync(this.fsMapToBase(p), encoding);
   }
   async readdirPromise(p, opts) {
     return this.baseFs.readdirPromise(this.mapToBase(p), opts);
@@ -7793,24 +7723,14 @@ class ZipOpenFS extends BasePortableFakeFS {
   }
   async readFilePromise(p, encoding) {
     return this.makeCallPromise(p, async () => {
-      switch (encoding) {
-        case `utf8`:
-          return await this.baseFs.readFilePromise(p, encoding);
-        default:
-          return await this.baseFs.readFilePromise(p, encoding);
-      }
+      return await this.baseFs.readFilePromise(p, encoding);
     }, async (zipFs, { subPath }) => {
       return await zipFs.readFilePromise(subPath, encoding);
     });
   }
   readFileSync(p, encoding) {
     return this.makeCallSync(p, () => {
-      switch (encoding) {
-        case `utf8`:
-          return this.baseFs.readFileSync(p, encoding);
-        default:
-          return this.baseFs.readFileSync(p, encoding);
-      }
+      return this.baseFs.readFileSync(p, encoding);
     }, (zipFs, { subPath }) => {
       return zipFs.readFileSync(subPath, encoding);
     });
@@ -8502,38 +8422,28 @@ function patchFs(patchedFs, fakeFs) {
     patchedFs.realpathSync.native = patchedFs.realpathSync;
   }
   {
-    const origEmitWarning = process.emitWarning;
-    process.emitWarning = () => {
-    };
-    let patchedFsPromises;
-    try {
-      patchedFsPromises = patchedFs.promises;
-    } finally {
-      process.emitWarning = origEmitWarning;
-    }
-    if (typeof patchedFsPromises !== `undefined`) {
-      for (const fnName of ASYNC_IMPLEMENTATIONS) {
-        const origName = fnName.replace(/Promise$/, ``);
-        if (typeof patchedFsPromises[origName] === `undefined`)
-          continue;
-        const fakeImpl = fakeFs[fnName];
-        if (typeof fakeImpl === `undefined`)
-          continue;
-        if (fnName === `open`)
-          continue;
-        setupFn(patchedFsPromises, origName, (pathLike, ...args) => {
-          if (pathLike instanceof FileHandle) {
-            return pathLike[origName].apply(pathLike, args);
-          } else {
-            return fakeImpl.call(fakeFs, pathLike, ...args);
-          }
-        });
-      }
-      setupFn(patchedFsPromises, `open`, async (...args) => {
-        const fd = await fakeFs.openPromise(...args);
-        return new FileHandle(fd, fakeFs);
+    const patchedFsPromises = patchedFs.promises;
+    for (const fnName of ASYNC_IMPLEMENTATIONS) {
+      const origName = fnName.replace(/Promise$/, ``);
+      if (typeof patchedFsPromises[origName] === `undefined`)
+        continue;
+      const fakeImpl = fakeFs[fnName];
+      if (typeof fakeImpl === `undefined`)
+        continue;
+      if (fnName === `open`)
+        continue;
+      setupFn(patchedFsPromises, origName, (pathLike, ...args) => {
+        if (pathLike instanceof FileHandle) {
+          return pathLike[origName].apply(pathLike, args);
+        } else {
+          return fakeImpl.call(fakeFs, pathLike, ...args);
+        }
       });
     }
+    setupFn(patchedFsPromises, `open`, async (...args) => {
+      const fd = await fakeFs.openPromise(...args);
+      return new FileHandle(fd, fakeFs);
+    });
   }
   {
     patchedFs.read[nodeUtils.promisify.custom] = async (fd, buffer, ...args) => {
@@ -14780,7 +14690,7 @@ function makeManager(pnpapi, opts) {
     apiEntry.lastRefreshCheck = timeNow;
     const stats = opts.fakeFs.statSync(pnpApiPath);
     if (stats.mtime > apiEntry.stats.mtime) {
-      process.emitWarning(`[Warning] The runtime detected new informations in a PnP file; reloading the API instance (${npath.fromPortablePath(pnpApiPath)})`);
+      process.emitWarning(`[Warning] The runtime detected new information in a PnP file; reloading the API instance (${npath.fromPortablePath(pnpApiPath)})`);
       apiEntry.stats = stats;
       apiEntry.instance = loadApiInstance(pnpApiPath);
     }
